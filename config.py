@@ -10,7 +10,7 @@ API_HASH = os.environ.get("API_HASH","")
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 # ------------------------------------------------
 BOT_USERNAME = os.environ.get("BOT_USERNAME", "")
-BOT_TEXT = ":𝐈𝐓'𝐬𝐆𝐎𝐋𝐔.™®:"
+BOT_TEXT = "ak_68_civil"
 # ------------------------------------------------
 OWNER_ID = int(os.environ.get("OWNER_ID", ""))
 # ------------------------------------------------
@@ -24,11 +24,11 @@ MONGO_URL = os.environ.get("MONGO_URL", "")
 # -----------------------------------------------
 PREMIUM_LOGS = int(os.environ.get("PREMIUM_LOGS", ""))
 # -----------------------------------------------
-join = '<a href="">✳️ JOIN BACKUP</a>'
+join = 'ak_68_civil_proofs'
 # -----------------------------------------------
 UNSPLASH_ACCESS_KEY = 'RabDRmuXXBobanmwwbvpP5LwoG4J8ox34y5Sstz-9jk'
 # -----------------------------------------------
-UNSPLASH_QUERY = 'animal baby'
+UNSPLASH_QUERY = 'taufeeq'
 # -----------------------------------------------
 ADMIN_BOT_USERNAME = "" #without @
 
