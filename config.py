@@ -37,7 +37,7 @@ THUMB_URL = os.environ.get("THUMB_URL", "https://i.ibb.co/DPCmWSKV/1000003297-3.
 
 
 
-# # Bot configuration
+# # Bot configuratio
 # API_ID = int(os.environ.get("API_ID", "22746239"))
 # API_HASH = os.environ.get("API_HASH", "a98ec8cfd8572a3a7c936cf828fe6215")
 # BOT_TOKEN = os.environ.get("BOT_TOKEN", "7547829346:AAGyfvOu47EciNhC7NUGSDEDFuBaetYYusw")
