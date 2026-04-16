@@ -13,10 +13,10 @@ from Extractor import app
 from config import OWNER_ID, CHANNEL_ID
 from Extractor.core import script
 from Extractor.core.func import subscribe, chk_user
-# from Extractor.modules.cdsfree import handle_cds_journey, handle_cds_callback, handle_batch_message
-# from Extractor.modules.appex_v1 import api_v1
-# from Extractor.modules.appex_v2 import appex_v2_txt
-# from Extractor.modules.appex_v3 import appex_v5_txt
+from Extractor.modules.cdsfree import handle_cds_journey, handle_cds_callback, handle_batch_message
+from Extractor.modules.appex_v1 import api_v1
+from Extractor.modules.appex_v2 import appex_v2_txt
+from Extractor.modules.appex_v3 import appex_v5_txt
 from Extractor.modules.appex_v4 import appex_v5_txt
 from Extractor.modules.appex_v4 import appex_v4_txt
 from Extractor.modules.classplus import classplus_txt
@@ -41,7 +41,7 @@ from Extractor.modules.enc import *
 from Extractor.modules.freecp import *
 from Extractor.modules.freeappx import *
 from Extractor.modules.freepw import *
-# from Extractor.modules.cds import handle_cds_callback
+from Extractor.modules.cds import handle_cds_callback
 
 from Extractor.core.mongo import plans_db
 from telegram import Update
@@ -91,11 +91,11 @@ custom_button = [[
 
 button1 = [              
                 [
-                    #InlineKeyboardButton("👑 Aᴘɴɪ Kᴀᴋsʜᴀ", callback_data="ak_"),
-                    #InlineKeyboardButton("👑 Aᴅᴅᴀ 𝟸𝟺𝟽", callback_data="adda_")
+                    InlineKeyboardButton("👑 Aᴘɴɪ Kᴀᴋsʜᴀ", callback_data="ak_"),
+                    InlineKeyboardButton("👑 Aᴅᴅᴀ 𝟸𝟺𝟽", callback_data="adda_")
                 ],
                 [
-                    #InlineKeyboardButton("👑 Kʜᴀɴ Gs", callback_data="khan_") 
+                    InlineKeyboardButton("👑 Kʜᴀɴ Gs", callback_data="khan_") 
                 ],
                 [
                     InlineKeyboardButton("👑 CʟᴀssPʟᴜs", callback_data="classplus_"),
@@ -106,17 +106,17 @@ button1 = [
                     InlineKeyboardButton("👑 Sᴛᴜᴅʏ IQ", callback_data="iq_")
                 ],
                 [
-                    #InlineKeyboardButton("👑 Kᴅ Cᴀᴍᴘᴜs", callback_data="kdlive_"),
-                    # InlineKeyboardButton("👑 Rᴀɴᴋᴇʀs Gᴜʀᴜᴋᴜʟ", callback_data="maintainer_")
-                    # InlineKeyboardButton("👑 CDS Jᴏᴜʀɴᴇʏ", callback_data="cds_journey")
+                    InlineKeyboardButton("👑 Kᴅ Cᴀᴍᴘᴜs", callback_data="kdlive_"),
+                    InlineKeyboardButton("👑 Rᴀɴᴋᴇʀs Gᴜʀᴜᴋᴜʟ", callback_data="maintainer_")
+                    InlineKeyboardButton("👑 CDS Jᴏᴜʀɴᴇʏ", callback_data="cds_journey")
                 ],
                 [
-                    #InlineKeyboardButton("👑 Mʏ Pᴀᴛʜsʜᴀʟᴀ", callback_data="my_pathshala_"),
-                    #InlineKeyboardButton("👑 ExᴀᴍPᴜʀ", callback_data="exampur_txt")
+                    InlineKeyboardButton("👑 Mʏ Pᴀᴛʜsʜᴀʟᴀ", callback_data="my_pathshala_"),
+                    InlineKeyboardButton("👑 ExᴀᴍPᴜʀ", callback_data="exampur_txt")
                 ],
                 [
-                    #InlineKeyboardButton("👑 Vɪsɪᴏɴ Iᴀs", callback_data="vision_ias_"),
-                    #InlineKeyboardButton("👑 Pʜʏsɪᴄs Wᴀʟʟᴀʜ", callback_data="pw_") 
+                    InlineKeyboardButton("👑 Vɪsɪᴏɴ Iᴀs", callback_data="vision_ias_"),
+                    InlineKeyboardButton("👑 Pʜʏsɪᴄs Wᴀʟʟᴀʜ", callback_data="pw_") 
                 ],
                 [
                     InlineKeyboardButton("𝐁 𝐀 𝐂 𝐊", callback_data="modes_")
@@ -814,10 +814,11 @@ def get_alphabet_keyboard():
             keyboard.append(row)
             row = []
     
-    if row:  # Add any remaining buttons
+    if row:  Add any remaining buttons
         keyboard.append(row)
     
-    # Add back button
+    
+     Add back button
     keyboard.append([InlineKeyboardButton("𝐁 𝐀 𝐂 𝐊", callback_data="home_")])
     
     return InlineKeyboardMarkup(keyboard)
@@ -1011,7 +1012,7 @@ async def html_to_text_command(client: Client, message: Message):
                 for name, url in zip(video_names, results):
                     video_links.append((name, url))
                 
-            # Extract PDF links
+            Extract PDF links
             pdf_links = []
             for div in soup.find_all('div', class_='list-group-item'):
                 view_btn = div.find('button', class_='view')
